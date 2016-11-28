@@ -22,16 +22,16 @@ spec:
             - name: ldap-client-certs
               mountPath: /container/service/ldap-client/assets/certs
           ports:
-            - containerPort: 443
+            - containerPort: 80
           env:
             - name: PHPLDAPADMIN_LDAP_HOSTS
-              value: "[{'ldap.example.org': [{'server': [{'tls': 'true'}]}]}]"
+              value: "ldap-service.default"
             - name: PHPLDAPADMIN_SERVER_ADMIN
               value: "webmaster@example.org"
             - name: PHPLDAPADMIN_SERVER_PATH
               value: "/phpldapadmin"
             - name: PHPLDAPADMIN_HTTPS
-              value: "true"
+              value: "false"
             - name: PHPLDAPADMIN_HTTPS_CRT_FILENAME
               value: "cert.crt"
             - name: PHPLDAPADMIN_HTTPS_KEY_FILENAME

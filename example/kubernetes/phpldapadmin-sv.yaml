@@ -3,9 +3,12 @@ kind: Service
 metadata:
   labels:
     app: phpldapadmin
+    router.deis.io/routable: "true"
+  annotations:
+    router.deis.io/domains: ldapadmin
   name: phpldapadmin-service
 spec:
   ports:
-    - port: 443
+    - port: 80
   selector:
     app: phpldapadmin
